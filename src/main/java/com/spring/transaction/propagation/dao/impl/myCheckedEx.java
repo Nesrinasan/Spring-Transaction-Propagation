@@ -1,4 +1,4 @@
-package com.byteslounge.spring.tx.dao.impl;
+package com.spring.transaction.propagation.dao.impl;
 
 /**
  * Created by Universal on 7/27/2018.

@@ -14,7 +14,7 @@
     <tx:annotation-driven transaction-manager="transactionManager"/>
 
     <context:component-scan
-            base-package="com.byteslounge.spring.tx" />
+            base-package="com.spring.transaction.propagation" />
     <!--<context:component-scan-->
             <!--base-package="com.byteslounge.spring.tx.user.impl" />-->
     <!--<context:component-scan-->
@@ -37,7 +37,7 @@
                 <prop key="hibernate.show_sql">true</prop>
             </props>
         </property>
-        <property name="packagesToScan" value="com.byteslounge.spring.tx.model" />
+        <property name="packagesToScan" value="com.spring.transaction.propagation.model" />
     </bean>
 
     <bean id="transactionManager"

@@ -1,12 +1,12 @@
-package com.byteslounge.spring.tx.model;
+package com.spring.transaction.propagation.model;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name="admin")
-public class Admin {
+@Table(name="user")
+public class User {
 
-    @SequenceGenerator(name = "generator", sequenceName = "ADMIN_SEQ_ID")
+    @SequenceGenerator(name = "generator", sequenceName = "USER_SEQ_ID")
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "generator")
     @Column

@@ -1,8 +1,9 @@
-package com.byteslounge.spring.tx.dao;
+package com.spring.transaction.propagation.dao;
+
+import com.spring.transaction.propagation.model.User;
 
 import java.util.List;
 
-import com.byteslounge.spring.tx.model.User;
 
 public interface UserDAO {
 

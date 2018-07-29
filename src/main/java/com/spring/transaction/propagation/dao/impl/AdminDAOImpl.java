@@ -1,10 +1,8 @@
-package com.byteslounge.spring.tx.dao.impl;
+package com.spring.transaction.propagation.dao.impl;
 
 
-import com.byteslounge.spring.tx.dao.AdminDAO;
-import com.byteslounge.spring.tx.dao.UserDAO;
-import com.byteslounge.spring.tx.model.Admin;
-import com.byteslounge.spring.tx.model.User;
+import com.spring.transaction.propagation.dao.AdminDAO;
+import com.spring.transaction.propagation.model.Admin;
 import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;

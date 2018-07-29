@@ -1,15 +1,15 @@
-package com.byteslounge.spring.tx.dao.impl;
+package com.spring.transaction.propagation.dao.impl;
 
 
 import java.util.List;
 
+import com.spring.transaction.propagation.model.User;
 import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.byteslounge.spring.tx.model.User;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 

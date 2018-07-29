@@ -1,12 +1,12 @@
-package com.byteslounge.spring.tx;
+package com.spring.transaction.propagation;
 
 import java.util.List;
 
+import com.spring.transaction.propagation.model.User;
+import com.spring.transaction.propagation.user.UserManager;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.byteslounge.spring.tx.model.User;
-import com.byteslounge.spring.tx.user.UserManager;
 
 public class Main 
 {

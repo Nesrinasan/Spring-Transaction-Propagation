@@ -1,15 +1,15 @@
-package com.byteslounge.spring.tx.user.impl;
+package com.spring.transaction.propagation.user.impl;
 
 import java.util.List;
 
-import com.byteslounge.spring.tx.dao.impl.UserDAOImpl;
+import com.spring.transaction.propagation.dao.impl.UserDAOImpl;
+import com.spring.transaction.propagation.model.User;
+import com.spring.transaction.propagation.user.UserManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.byteslounge.spring.tx.model.User;
-import com.byteslounge.spring.tx.user.UserManager;
 
 @Service
 //@Transactional
@@ -102,7 +102,7 @@ public class UserManagerEntityService implements UserManager {
          * Metod bitiminde beklettiği transaction’ı devreye alır.
          * Öncesinde bir transaction varsa bile bağlanmaz. Direk non-transaction olarak çalışacaktır.
          */
-        insert_NOT_SUPPORTED ();
+//        insert_NOT_SUPPORTED ();
 
     }
 
@@ -144,7 +144,7 @@ public class UserManagerEntityService implements UserManager {
             }else{
                 user = null;
             }
-            user.setName ("ali" + i);
+            user.setName ("mehmet" + i);
             userDAO.insert_NOT_SUPPORTED (user);
         }
     }
