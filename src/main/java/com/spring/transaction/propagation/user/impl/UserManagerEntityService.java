@@ -27,8 +27,8 @@ public class UserManagerEntityService implements UserManager {
 //        insertUser_REQUIRED2();
 
         /**
-         * Aşağıdaki örnekte sarmallanan hataların sonucunu görüyoruz. Transaction yapısı sarmallanan hatalar için geçerli olmaz.
-         * Yani required gibi bir hatada üstünde çalışan bütün çalışan sistemi bile rollback eden yapı eğer hata sarmallanırsa çalışmayacaktır.
+         * Aşağıdaki örnekte sarmallanan hataların sonucunu görüyoruz. Transaction yapısı sarmallanan hatalar için geçerli olmayabilir.
+         * Yani required gibi bir hatada üstünde çalışan bütün çalışan sistemi bile rollback eden yapı eğer hata sarmallanırsa çalışmayabilir.
          *
          */
 //        insertUser_REQUIRED_DIFF_ROLLBACKS ();
