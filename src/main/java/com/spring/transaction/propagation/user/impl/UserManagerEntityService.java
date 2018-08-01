@@ -21,27 +21,21 @@ public class UserManagerEntityService implements UserManager {
     public void insert() {
 
         /**
-         * Aynı sessionn üzerinden çalışırlar. Yukarıdaki transactiona bağlıdır.
-         */
-//        insertUser_REQUIRED ();
-//        insertUser_REQUIRED2();
-
-        /**
-         * Aşağıdaki örnekte sarmallanan hataların sonucunu görüyoruz. Transaction yapısı sarmallanan hatalar için geçerli olmayabilir.
-         * Yani required gibi bir hatada üstünde çalışan bütün çalışan sistemi bile rollback eden yapı eğer hata sarmallanırsa çalışmayabilir.
-         *
-         */
-//        insertUser_REQUIRED_DIFF_ROLLBACKS ();
-
-        /**
          * REQUIRED propagation'u aynı session içerisinde çalıştığı için yani blok bitene kadar aynı session çalıştığı için
          * hata durumunda bütün blok işlemleri geri alınır.
          */
 //        insertUser_REQUIRED ();
 //        insertUser_REQUIRED_EXP ();
 
-        /** Create a new transaction, and suspend the current transaction if one exists.
+        /**
+         * REQUIRED : Aynı sessionn üzerinden çalışırlar. Yukarıdaki transactiona bağlıdır.
+         */
+//        insertUser_REQUIRED ();
+//        insertUser_REQUIRED2();
+
+        /**
          *  REQUIRES_NEW propagation'u aynı blok içerisinde olsa bile var olan session'ı askıya alır.
+         *  Create a new transaction, and suspend the current transaction if one exists.
          *  Yeni bir session açar ve işlemi hatasız bitirdikten sonra aynı blok içerisinde başka bir propagaiton üzerinden
          *  hata olsa bile işlem geri alınmaz.
          */
@@ -66,7 +60,7 @@ public class UserManagerEntityService implements UserManager {
 //        insertUser_REQUIRES_NEW_EXP();
 
         /**
-         * Support a current transaction
+         * MANDATORY :Support a current transaction
          * Kendinden önce bir transaction başlamışsa(Türü ne olursa olsun) REQUIRED gibi davranır.
          * Zorunlu anlamına gelen mandatory ile kendinden önce bir transaction başlatılmamışsa eğer hata alacaktır.
          */
@@ -75,7 +69,7 @@ public class UserManagerEntityService implements UserManager {
 //        insertUser_REQUIRES_NEW_EXP();
 
         /**
-         * Existing transaction found for transaction marked with propagation 'never'
+         * NEVER :Existing transaction found for transaction marked with propagation 'never'
          * Eğer kendinden önce bir transaction başlatılmışssa hata fırlatacaktır.
          */
 //        insertUser_NEVER();
@@ -90,7 +84,7 @@ public class UserManagerEntityService implements UserManager {
 //        insertUser_NESTED();
 
         /**
-         * kendinden önce bir transaction oluşmuşsa ona dahil olur ve onun içnde çalışır.
+         * SUPPORTS :kendinden önce bir transaction oluşmuşsa ona dahil olur ve onun içnde çalışır.
          * Eğer kendinden önce yaratılmış bir transaction yok ise hata vermeden yine çalışır ancak transactional bir davranış sergilemez.
          * Kendinden sonraki transactionun önemi olmaz bu durumda.
          * Eğer kendinden önce transaction başlamışsa onun gibi hareket eder. Required ile başlamışsa onun gibi hepsi geri alınır.
@@ -98,11 +92,20 @@ public class UserManagerEntityService implements UserManager {
 //        insert_SUPPORTS ();
 
         /**
-         * Öncesinde bir transaction başlatılmasına gerek yoktur. Eğer bir transaction varsa onu askıya alır.
+         * NOT_SUPPORTED :Öncesinde bir transaction başlatılmasına gerek yoktur. Eğer bir transaction varsa onu askıya alır.
          * Metod bitiminde beklettiği transaction’ı devreye alır.
          * Öncesinde bir transaction varsa bile bağlanmaz. Direk non-transaction olarak çalışacaktır.
          */
 //        insert_NOT_SUPPORTED ();
+
+
+        /**
+         * Aşağıdaki örnekte sarmallanan hataların sonucunu görüyoruz. Transaction yapısı sarmallanan hatalar için geçerli olmayabilir.
+         * Yani required gibi bir hatada üstünde çalışan bütün çalışan sistemi bile rollback eden yapı eğer hata sarmallanırsa çalışmayabilir.
+         *
+         */
+//        insertUser_REQUIRED_DIFF_ROLLBACKS ();
+
 
     }
 
